@@ -13,6 +13,10 @@ var verifyDevice = function() {
 };
 
 export default Ember.Object.extend({
+  isBrowser: function() {
+    device.platform === 'browser';
+  }.property(),
+
   isAndroid: function() {
     verifyDevice();
     return device.platform === 'Android';
